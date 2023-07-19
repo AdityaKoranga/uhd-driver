@@ -15,3 +15,8 @@ sudo make install
 sudo ldconfig
 sudo uhd_images_downloader
 ```
+# NOTE
+in the step `make -j $(nproc)` nproc will take all the cores, so instead, use few cores less than the total cores because it might also use the cores that are assigned to the other services/pods/containers.
+
+for eg: if total cores are 40 then use 10 less, like the following
+`make -j 30`
